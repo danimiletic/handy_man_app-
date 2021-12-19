@@ -4,14 +4,15 @@ const WorkerForm = ({ addWorker }) => {
   const [worker, setWorker] = useState({ name: '', phone: 0, email: '' })
 
   const handleSubmit = (e) => {
-    e.preventdefault()
+    e.preventDefault()
     addWorker(worker)
-    setWorker({ name: '', phone: '' })
+    setWorker({ name: '', phone: 0, email: '' })
   }
 
   return (
     <>
       <form onSubmit={handleSubmit}>
+        <label>Name:</label>
         <input 
           name='name' 
           value={worker.name}
@@ -19,13 +20,26 @@ const WorkerForm = ({ addWorker }) => {
           required
           placeholder="name"
         />
-        <label>Description:</label>
-        <textarea
+        <br />
+        <label>Phone:</label>
+        <input
           name='phone'
           value={worker.phone}
           onChange={(e) => setWorker({...worker, phone: e.target.value})}
           required
-        ></textarea>
+          placeholder="phone"
+        />
+        <br />
+        <label>Email:</label>
+        <input
+        name='email'
+        value={worker.email}
+        onChange={(e) => setWorker({...worker, email: e.target.value})}
+        required
+        placeholder="email"
+        />
+        <br />
+        <br />
         <button type='submit'>Submit</button>
       </form>
     </>
