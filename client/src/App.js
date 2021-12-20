@@ -5,6 +5,9 @@ import NoMatch from './components/shared/NoMatch';
 import Workers from './components/workers/Workers';
 import Navbar from './components/shared/Navbar';
 import WorkerShow from './components/workers/WorkerShow';
+import Services from './components/services/Services';
+import ServiceShow from './components/services/ServiceShow';
+
 
 const App = () => (
   <>
@@ -16,6 +19,8 @@ const App = () => (
       <Route exact path='/workers' element={<Workers />} />
       <Route exact path='/workers/:workerId' element={<WorkerShow />} />
       <Route path='*' element={<NoMatch />} />
+      <Route exact path='/services' element={<Services />} />
+      <Route exact path='/services/:ServiceId' element={<ServiceShow />} />
     </Routes>
   </>
 )

@@ -21,6 +21,8 @@ const WorkerShow = ({}) => {
       <p>{worker.phone}</p>
       <p>{worker.email}</p>
       <p>{params.workerId}</p>
+      <button>Edit</button>
+      <button>Delete</button>
       <Services workerId={params.workerId} />
     </>
   )
