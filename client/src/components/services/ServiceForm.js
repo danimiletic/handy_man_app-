@@ -30,6 +30,7 @@ const ServiceForm = ({ addService, id, title, cost, time, updateService, setEdit
           onChange={(e) => setService({ ...service, title: e.target.value })}
           required
         />
+        <br />
         <label>Cost:</label>
         <textarea
           name='cost'
@@ -37,6 +38,7 @@ const ServiceForm = ({ addService, id, title, cost, time, updateService, setEdit
           onChange={(e) => setService({ ...service, cost: e.target.value })}
           required
         ></textarea>
+        <br />
         <label>Time to Complete:</label>
         <input 
           name='time'
@@ -45,6 +47,8 @@ const ServiceForm = ({ addService, id, title, cost, time, updateService, setEdit
           required
           type="number"
         />
+        <br />
+        <br />
         <button type="submit">Submit</button>
       </form>
     </>
