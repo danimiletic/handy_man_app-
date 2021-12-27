@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Button } from 'react-bootstrap';
 
 const CommentForm = ({ addComment, id, author, tools, request, updateComment, setEdit }) => {
   const [comment, setComment] = useState({ author: '', tools: '', request: '' })
@@ -32,12 +33,12 @@ const CommentForm = ({ addComment, id, author, tools, request, updateComment, se
         />
         <br />
         <label>Tools:</label>
-        <textarea
+        <input
           name='Tools'
           value={comment.tools}
           onChange={(e) => setComment({ ...comment, tools: e.target.value })}
           required
-        ></textarea>
+        />
         <br />
         <label>Request:</label>
         <input 
@@ -49,7 +50,7 @@ const CommentForm = ({ addComment, id, author, tools, request, updateComment, se
         />
         <br />
         <br />
-        <button type="submit">Submit</button>
+        <Button variant="outline-dark">Submit</Button>
       </form>
     </>
   )
