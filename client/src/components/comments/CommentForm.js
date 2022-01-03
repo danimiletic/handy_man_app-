@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
+import { InputGroup, FormControl, Container } from 'react-bootstrap';
 
 const CommentForm = ({ addComment, id, author, tools, request, updateComment, setEdit }) => {
   const [comment, setComment] = useState({ author: '', tools: '', request: '' })
@@ -23,36 +24,51 @@ const CommentForm = ({ addComment, id, author, tools, request, updateComment, se
 
   return (
     <>
+    <Container>
       <form onSubmit={handleSubmit}>
-        <label>Author:</label>
-        <input 
+      <InputGroup size="sm" className="mb-3">
+      <InputGroup.Text id="inputGroup-sizing-sm">Author</InputGroup.Text>
+      <FormControl 
+          aria-label="Title" 
+          aria-describedby="inputGroup-sizing-sm"
           name='Author'
           value={comment.author}
           onChange={(e) => setComment({ ...comment, author: e.target.value })}
           required
         />
-        <br />
-        <label>Tools:</label>
-        <input
+        </InputGroup>
+      
+        <InputGroup size="sm" className="mb-3">
+      <InputGroup.Text id="inputGroup-sizing-sm">Tools</InputGroup.Text>
+      <FormControl 
+          aria-label="Tools" 
+          aria-describedby="inputGroup-sizing-sm"
           name='Tools'
           value={comment.tools}
           onChange={(e) => setComment({ ...comment, tools: e.target.value })}
           required
         />
-        <br />
-        <label>Request:</label>
-        <input 
+         </InputGroup>
+        
+
+       <InputGroup size="sm" className="mb-3">
+      <InputGroup.Text id="inputGroup-sizing-sm">Request</InputGroup.Text>
+      <FormControl 
+          aria-label="Request" 
+          aria-describedby="inputGroup-sizing-sm"
           name='request'
           value={comment.request}
           onChange={(e) => setComment({ ...comment, request: e.target.value })}
           required
           type="text"
         />
-        <br />
-        <br />
+        </InputGroup>
+       
         <Button variant="outline-dark">Submit</Button>
       </form>
+      </Container>
     </>
+
   )
 }
 
